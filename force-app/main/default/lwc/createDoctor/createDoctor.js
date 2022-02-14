@@ -1,3 +1,5 @@
 import { LightningElement } from 'lwc';
 
-export default class CreateDoctor extends LightningElement {}
+export default class CreateDoctor extends LightningElement {
+    
+}
