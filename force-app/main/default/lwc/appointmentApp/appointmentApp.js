@@ -1,8 +1,11 @@
 import { LightningElement, wire } from 'lwc';
-import getDoctors from '@salesforce/apex/ControllerDoctors.getDoctors';
+import getDoctors from '@salesforce/apex/ControllerDoctor.getDoctors';
 
 export default class AppointmentApp extends LightningElement {
     @wire(getDoctors) wiredDoctors;
+
+    arrDoctor;
+
     value = 'choose Doctor';
 
     get options() {
@@ -17,4 +20,8 @@ export default class AppointmentApp extends LightningElement {
     handleChange(event) {
         this.value = event.detail.value;
     }
+    handleClick (){
+        
+    console.log(this.wiredDoctors.data.Name);
+}
 }
