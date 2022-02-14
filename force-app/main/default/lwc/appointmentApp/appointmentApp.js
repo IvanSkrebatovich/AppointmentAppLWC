@@ -2,9 +2,20 @@ import { LightningElement, wire } from 'lwc';
 import getDoctors from '@salesforce/apex/ControllerDoctor.getDoctors';
 
 export default class AppointmentApp extends LightningElement {
+    listDoctor;
+    displayDiv = false;
     @wire(getDoctors) wiredDoctors;
-
-    arrDoctor;
+    // @wire(getDoctors) wiredDoctors({data, error}) {
+    //     if (data) {
+    //         this.listDoctor = data.map( doc => ({ label: doc, value: doc}));
+    //     } else {
+    //         console.log(error);
+    //     }
+    // }
+    showTemplateHandler() {
+        this.displayDiv = true;
+    }
+    
 
     value = 'choose Doctor';
 
@@ -22,6 +33,6 @@ export default class AppointmentApp extends LightningElement {
     }
     handleClick (){
         
-    console.log(this.wiredDoctors.data.Name);
+    console.log(this.wiredDoctors.data);
 }
 }
