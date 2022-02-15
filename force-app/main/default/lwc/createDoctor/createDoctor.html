@@ -1,3 +1,9 @@
 <template>
-    <lightning-button label="Create new"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    <div class="slds-p-around_medium lgc-bg slds-box">
+        <lightning-input type="text" name="inputDocName" label="Enter Doctor's name" onchange={docNameHandler}></lightning-input>
+        <lightning-input type="time" name="inputStart" label="Enter working hours start" onchange={hoursStartHandler}></lightning-input>
+        <lightning-input type="time" name="inputEnd" label="Enter working hours end" onchange={hoursEndHandler}></lightning-input>
+        <br>
+        <lightning-button label="Create" onclick={docCreateHandler} class="slds-m-left_x-small"></lightning-button>
+    </div>
 </template>

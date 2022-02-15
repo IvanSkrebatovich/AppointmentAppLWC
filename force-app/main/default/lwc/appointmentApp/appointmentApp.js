@@ -3,9 +3,6 @@ import getDoctors from "@salesforce/apex/ControllerDoctor.getDoctors";
 
 export default class AppointmentApp extends LightningElement {
     listDoctor;
-    newDocName;
-    newDocStart;
-    newDocEnd;
     displayDiv = false;
 
     @wire(getDoctors) wiredDoctors;
@@ -20,18 +17,6 @@ export default class AppointmentApp extends LightningElement {
     //----------Shows/Hides doctor's create template----------
     showTemplateHandler() {
         this.displayDiv = !this.displayDiv;
-    }
-    //----------Put doctor's name and working hours in variables----------
-    docNameHandler(event) {
-        this.newDocName = event.target.value; 
-    }
-
-    hoursStartHandler(event) {
-        this.newDocStart = event.target.value;
-    }
-
-    hoursEndHandler(event) {
-        this.newDocEnd = event.target.value;
     }
 
     //----------This should be dropdown list of doctors----------
